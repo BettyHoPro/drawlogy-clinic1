@@ -1,7 +1,7 @@
 # Drawology Clinic
 During the COVID-days, people are quite scared about the virus and are reluctant to go outside, let alone visit places like clinics that can be easily infected.  ALso, if mental health problems occur, people living abroad could also hardly consult with a good local psychologist because of their language barrier. Therefore our project will provide a platform where patients will be able to consult psychologists in a very special way, in which they will no longer be constrained by typing or speaking English or other prevailing language and also improve the fun and anticipation of seeing the psychologist--- "Drawology Clinic." 
 
-To remedy this issue, patients will be provided the platform where they can simply draw the picture and upload them to psychologists's without going outside and in turn, they will also get the feedback in form of the picture and some translated version sentences for them to understand, which will definitly help to improve the fun and expectation of seeing a psychologist.
+To remedy this issue, patients will be provided the platform where they can simply draw the picture and upload them to psychologists's without going outside and in turn, they will also get the feedback in form of the picture and some translated version sentences for them to understand, which will definitly help to improve the expectation of seeing a psychologist.
 
 In this project, we will include the personal information management features in our "clinic" application, including:
 
