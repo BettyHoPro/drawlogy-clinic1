@@ -8,22 +8,18 @@ In this project, we will include the personal information management features in
 1. **Simple File Storage:** Upload/download/remove files
 2. **Note Management:** Add/update/remove text notes
 
-Plus we are responsible for developing the server, website, and tests.
+Plus we are responsible for developing the server, website, and tests. we Use Java Spring Boot MVC and Maven for the backend 
 
-## Starter Project
-A senior developer is assigned to be your tech lead and mentor, and they put together a starter project for you. It's a Maven project configured for all the dependencies the project requires, though you should feel free to add any additional dependencies you might require. [You can download or clone the starter repository here](https://github.com/udacity/nd035-c1-spring-boot-basics-project-starter/tree/master/starter/cloudstorage).
+## Login Page
+this the part that both patients and psychologists can log in to the system and patient can upload their drwaings as well as psychologists can download the file and write down note for them.
 
-Your tech lead already designed a database schema for the project and has added it to the `src/main/resources` directory. That means you don't have to design the database, only develop the Java code to interact with it. 
-
-Your tech lead also created some HTML templates from the design team's website mockups, and they placed them in the `src/main/resources/templates` folder. These are static pages right now, and you have to configure them with Thymeleaf to add functionality and real data from the server you develop. You may also have to change them to support testing the application.
-
-From the link above, you can download the starter code and open it as a Maven project in IntelliJ.
+## Login Page
+Consist of Three Tab one for normal user to upload their drawings, second tab is for psychologists to put note for each drwaing and the third tab is for administration tasks like managing the accounts username and passwords. 
 
 ## Requirements and Roadmap
-Your tech lead is excited to work with you and has laid out a development roadmap with requirements and milestones. They tell you that there are three layers of the application you need to implement:
 
-1. The back-end with Spring Boot
-2. The front-end with Thymeleaf
+1. a drawing in jpg, png, or docx
+2. some registered psychologists
 3. Application tests with Selenium
 
 ### The Back-End
@@ -77,8 +73,7 @@ The home page is the center of the application and hosts the three required piec
   - The user should be able to edit or delete previously-created notes.
 
  iii. Credentials
- - The user should be able to store credentials for specific websites and see a list of the credentials they've previously stored. If you display passwords in this list, make sure they're encrypted!
- - The user should be able to view/edit or delete individual credentials. When the user views the credential, they should be able to see the unencrypted password.
+ - User should be able to change username and password with the help of this tab
 
 The home page should have a logout button that allows the user to logout of the application and keep their data private.
 
@@ -101,32 +96,3 @@ Your tech lead trusts you to do a good job, but testing is important whether you
  - Write a test that views an existing set of credentials, verifies that the viewable password is unencrypted, edits the credentials, and verifies that the changes are displayed.
  - Write a test that deletes an existing set of credentials and verifies that the credentials are no longer displayed.
 
-## Final Tips and Tricks
-### Password Security
-Make sure not to save the plain text credentials of the application's users in the database. That's a recipe for data breach disaster! Use a hashing function to store a scrambled version instead. Your tech lead gave you a class called `HashService` that can hash passwords for you. When the user signs up, you only store a hashed version of their password in the database, and on login, you hash the password attempt before comparing it with the hashed password in the database. Your tech lead knows that can be a little confusing, so they provided this code sample to help illustrate the idea:
-
-```
-byte[] salt = new byte[16];
-random.nextBytes(salt);
-String encodedSalt = Base64.getEncoder().encodeToString(salt);
-String hashedPassword = hashService.getHashedValue(plainPassword, encodedSalt);
-return hashedPassword;
-```
-
-For storing credentials in the main part of the application, we can't hash passwords because it's a one-way operation. The user needs access to the unhashed password, after all! So instead, you should encrypt the passwords. Your tech lead provided you with a class called `EncryptionService` that can encrypt and decrypt passwords. When a user adds new credentials, encrypt the password before storing it in the database. When the user views those credentials, decrypt the password before displaying it. Here's a little code snippet on how to use `EncryptionService`:
-
-```
-SecureRandom random = new SecureRandom();
-byte[] key = new byte[16];
-random.nextBytes(key);
-String encodedKey = Base64.getEncoder().encodeToString(key);
-String encryptedPassword = encryptionService.encryptValue(password, encodedKey);
-String decryptedPassword = encryptionService.decryptValue(encryptedPassword, encodedKey);
-```
-
-You aren't required to understand hashing or encryption and that's why your tech lead provided these code samples for you. If you're curious and want to learn a little more, you can do a quick Google search or follow the links below:
-
-[Hash Function](https://en.wikipedia.org/wiki/Hash_function)
-[Encryption](https://en.wikipedia.org/wiki/Encryption)
-
-All of us here at Super*Duper*Drive wish you good luck with the project!
