@@ -5,12 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}">
-        <link rel="stylesheet" type="text/css" th:href="@{/css/layout.css}"/>  
-        
+        <link rel="stylesheet" type="text/css" th:href="@{/css/layout.css}"/> 
+
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+
       <title>Login</title>
     </head>
     <body class="p-3 mb-2 body-bg text-black">
-        <body>
+
+            <nav class="nav-bar">
+              <div class="nav-logo">
+                  <span>Drawalogy Clinic</span>
+                </div>
+            </nav>
+
         <div class="container justify-content-center w-25 p-3" style="background-color: #eeeeee; margin-top: 5em;">
             <h1 class="display-5">Login</h1>
             <form action="#" th:action="@{/login}" method="POST">
