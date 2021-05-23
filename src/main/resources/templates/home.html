@@ -15,6 +15,106 @@
                     <button type="submit" id="logoutbtn" class="btn btn-secondary float-right" >Logout</button>
                 </form>
             </div>
+
+       <!--- Google Translate --->
+       <div id="google_translate_element"></div>
+
+       <script type="text/javascript">
+           function googleTranslateElementInit() {
+               new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+           }
+       </script>
+
+       <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+       <!------*************----->
+
+           <nav style="clear: right;">
+               <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                   <a class="nav-item nav-link active" id="nav-files-tab" data-toggle="tab" href="#nav-files" role="tab" aria-controls="nav-files" aria-selected="true">Discussion</a>
+                   <a class="nav-item nav-link" id="nav-notes-tab" data-toggle="tab" href="#nav-notes" role="tab" aria-controls="nav-notes" aria-selected="false">Doctor's Notes</a>
+                   <!--<a class="nav-item nav-link" id="nav-credentials-tab" data-toggle="tab" href="#nav-credentials" role="tab" aria-controls="nav-credentials" aria-selected="false">Credentials</a>-->
+               </div>
+           </nav>
+
+
+       <!-- Radio Button -->
+       <input type="radio" onchange="radioChange()" name="contact2" id="contact2" value="d" /> Draw &nbsp;
+       <input type="radio" onchange="radioChange()" name="contact2" id="contact2" value="f" /> File Upload
+
+   </div>
+       <!----------------->
+       <!--- CANVAS ---->
+       <div id="canvas">
+       <style>
+           /* body {
+               margin: 0;
+                display: flexbox;
+               justify-content: center; 
+           } */
+           #board {
+               margin: 0 auto;
+               width: 600px;
+           }
+           #mCanvas {
+               border: 1px solid gray;
+           }
+       </style>
+
+      <form id="formDraw" action="#" enctype="multipart/form-data" method="POST">
+       <canvas id="mCanvas" width="600px" height="600px"></canvas>
+          <input type="hidden" id="hiddenUpload0"/>
+          <div class="col-sm-4">
+              <button onclick="setHidden(0)" id="uploadBtn0">Upload</button>
+          </div>
+
+      </form>
+
+       <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+       <script type="text/javascript">
+           window.onload = function() {
+               var myCanvas = document.getElementById("mCanvas");
+               var cColor = 'black';
+               if(myCanvas){
+                   var isDown  = false;
+                   var ctx = myCanvas.getContext("2d");
+                   var canvasX, canvasY;
+                   ctx.lineWidth = 7;
+
+                   $(myCanvas)
+                       .mousedown(function(e){
+                           isDown = true;
+                           ctx.beginPath();
+                           canvasX = e.pageX - myCanvas.offsetLeft;
+                           canvasY = e.pageY - myCanvas.offsetTop;
+                           ctx.moveTo(canvasX, canvasY);
+                       })
+                       .mousemove(function(e){
+                           if(isDown != false) {
+                               canvasX = e.pageX - myCanvas.offsetLeft;
+                               canvasY = e.pageY - myCanvas.offsetTop;
+                               ctx.lineTo(canvasX, canvasY);
+                               ctx.strokeStyle = cColor;
+                               ctx.stroke();
+                           }
+                       })
+                       .mouseup(function(e){
+                           isDown = false;
+                           ctx.closePath();
+                       });
+               }
+               $('#selectColor').change(function () {
+                   cColor = 'black';
+               });
+           };
+       </script>
+
+       <!--- ******* --->
+       </div>
+
+
+
+
+            
             <div id="contentDiv" style="clear: right;">
                 <nav style="clear: right;">
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
