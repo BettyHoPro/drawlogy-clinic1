@@ -20,7 +20,7 @@ public class CloudStorageApplication {
 //commend Cynthia
 	public static void main(String[] args) {
 /*		SecureRandom random = new SecureRandom();
-		byte[] salt = new byte[16];a
+		byte[] salt = new byte[16];
 		random.nextBytes(salt);
 		String encodedSalt = Base64.getEncoder().encodeToString(salt);
 		String test="testmikonim";
