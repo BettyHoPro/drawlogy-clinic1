@@ -8,6 +8,7 @@ import com.udacity.jwdnd.course1.cloudstorage.services.ErrorMsgService;
 import com.udacity.jwdnd.course1.cloudstorage.services.UserService;
 import com.udacity.jwdnd.course1.cloudstorage.storage.StorageFileNotFoundException;
 import com.udacity.jwdnd.course1.cloudstorage.storage.StorageService;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -98,6 +99,24 @@ public class FileUploadController {
             redirectAttributes.addFlashAttribute("classmessage",errorMsgService.getClassErrorType());
             redirectAttributes.addFlashAttribute("fileNavErrorMeesage",errorMsgService.getFileSizeLimitError());
         }
+        else if (!(file.getOriginalFilename().contains("jpg") || file.getOriginalFilename().contains("png")||
+                file.getOriginalFilename().contains("docx")))
+        {
+//            System.out.println(file.getName());
+            System.out.println(file.getOriginalFilename());
+            redirectAttributes.addFlashAttribute("repeatcheck", true);
+            redirectAttributes.addFlashAttribute("classmessage",errorMsgService.getClassErrorType());
+            redirectAttributes.addFlashAttribute("fileNavErrorMeesage",errorMsgService.getFormatErrorType());
+        }
+
+//        else if (!file.getOriginalFilename().contains("png"))
+//        {
+////            System.out.println(file.getName());
+//            System.out.println(file.getOriginalFilename());
+//            redirectAttributes.addFlashAttribute("repeatcheck", true);
+//            redirectAttributes.addFlashAttribute("classmessage",errorMsgService.getClassErrorType());
+//            redirectAttributes.addFlashAttribute("fileNavErrorMeesage",errorMsgService.getFormatErrorType());
+//        }
 
         else {
 

@@ -12,6 +12,7 @@ public class ErrorMsgService {
     final private String emptyFile="Selected file name Should not be empty, or you did not select any file.";
     final private String zeroFileSize="Selected File Size Should not be empty.";
     final private String sucessfullFileDelete="You successfully Deleted ";
+    final private String fileFormatError="Only JPG and PNG and Docx file formats are Accepted";
     final private String fileSizeLimitError="Exceed File size! file size must be less than 2 MB.";
     final private String fileDidNotInsert="Some Thing Went Wrong File Did Not Inserted";
 
@@ -83,6 +84,10 @@ public class ErrorMsgService {
 
     public String getClassErrorType() {
         return classErrorType;
+    }
+
+    public String getFormatErrorType() {
+        return fileFormatError;
     }
 
     public String getClassSuccessType() {
