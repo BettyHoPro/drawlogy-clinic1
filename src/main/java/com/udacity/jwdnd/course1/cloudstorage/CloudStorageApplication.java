@@ -17,7 +17,7 @@ import java.util.Base64;
 @SpringBootApplication
 @EnableConfigurationProperties(StorageProperties.class)
 public class CloudStorageApplication {
-
+//commend Cynthia
 	public static void main(String[] args) {
 /*		SecureRandom random = new SecureRandom();
 		byte[] salt = new byte[16];
