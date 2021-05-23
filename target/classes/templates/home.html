@@ -16,7 +16,7 @@
 
             <nav class="nav-bar">
               <div class="nav-logo">
-                  <span>Drawalogy Clinic</span>
+                  <span>Drawology Clinic</span>
                 </div>
             </nav>
 
@@ -64,7 +64,8 @@
            } */
            #board {
                margin: 0 auto;
-               width: 600px;
+               width: 1000 px !important;
+               background-color: white;
            }
            #mCanvas {
                border: 1px solid gray;
@@ -72,7 +73,7 @@
        </style>
 
       <form id="formDraw" action="#" enctype="multipart/form-data" method="POST">
-       <canvas id="mCanvas" width="600px" height="600px"></canvas>
+       <canvas id="mCanvas" width="600px" height="1000px" style="background-color: white !important"></canvas>
           <input type="hidden" id="hiddenUpload0"/>
           <div class="col-sm-4">
               <button onclick="setHidden(0)" id="uploadBtn0">Upload</button>
@@ -410,7 +411,7 @@
         </script>
 
 
-            
+<!--             
             <div id="contentDiv" style="clear: right;">
                 <nav style="clear: right;">
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -439,9 +440,9 @@
 
                                 </div>
                             </div>
-                        </form>
+                        </form> -->
 
-                        <div id="error-msg" th:if="${repeatcheck}"  th:class="${classmessage}" class="alert alert-danger" >
+                        <!-- <div id="error-msg" th:if="${repeatcheck}"  th:class="${classmessage}" class="alert alert-danger" >
                            <span id="file-Nav-Message" th:text="${fileNavErrorMeesage}"></span>
                         </div>
 
@@ -503,9 +504,9 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
+                        </div> -->
 
-                        <div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="noteModalLabel" aria-hidden="true">
+                        <!-- <div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="noteModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -570,9 +571,9 @@
                                 </tr>
                                 </tbody>
                             </table>
-                        </div>
+                        </div> -->
 
-                        <div class="modal fade" id="credentialModal" tabindex="-1" role="dialog" aria-labelledby="credentialModalLabel" aria-hidden="true">
+                        <!-- <div class="modal fade" id="credentialModal" tabindex="-1" role="dialog" aria-labelledby="credentialModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -614,20 +615,20 @@
 
         <script th:src="@{/js/jquery-slim.min.js}"></script>
         <script th:src="@{/js/popper.min.js}"></script>
-        <script th:src="@{/js/bootstrap.min.js}"></script>
+        <script th:src="@{/js/bootstrap.min.js}"></script> -->
 
         <!--For opening the note modal-->
-        <script type="text/javascript">
-            // For opening the note modal
-            function showNoteModal(noteId, noteTitle, noteDescription) {
+        <!-- <script type="text/javascript"> -->
+            <!-- // For opening the note modal -->
+            <!-- function showNoteModal(noteId, noteTitle, noteDescription) {
                 $('#note-id').val(noteId ? noteId : '');
                 $('#note-title').val(noteTitle ? noteTitle : '');
                 $('#note-description').val(noteDescription ? noteDescription : '');
                 $('#noteinsorupd').val('0');
                 $('#noteModal').modal('show');
-            }
+            } -->
 
-            // For opening the credentials modal
+            <!-- // For opening the credentials modal
             function showCredentialModal(credentialId, url, username, password) {
                 $('#credential-id').val(credentialId ? credentialId : '');
                 $('#credential-url').val(url ? url : '');
@@ -663,6 +664,6 @@
 
 
             }
-        </script>
+        </script> -->
     </body>
 </html>
