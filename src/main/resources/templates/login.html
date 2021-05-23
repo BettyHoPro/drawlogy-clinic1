@@ -5,10 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}">
-
-        <title>Login</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/layout.css}"/>  
+        
+      <title>Login</title>
     </head>
-    <body class="p-3 mb-2 bg-light text-black">
+    <body class="p-3 mb-2 body-bg text-black">
+        <body>
         <div class="container justify-content-center w-25 p-3" style="background-color: #eeeeee; margin-top: 5em;">
             <h1 class="display-5">Login</h1>
             <form action="#" th:action="@{/login}" method="POST">
